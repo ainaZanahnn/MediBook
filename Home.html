@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Page</title>
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <!-- Include Font Awesome -->
+  <link href="https://cdn.jsdelivr.net/npm/@iconscout/unicons/css/line.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+  <!--------------------------------------------------- HEADER SECTION  ---------------------------------------------------------->
+
+  <header id="nav-bar">
+    <nav class="navbar navbar-expand-md navbar-light fixed-top" style="background-color: #007bff;">
+      <div class="container">
+        <a href="#Home" class="navbar-brand mb-0 h1 d-flex align-items-center">
+          <img src="img/logoWebsite.png" class="d-inline-block align-top" width="50" height="50" alt="Logo" />
+          <span class="logo-text">MediBook</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a href="#banner" class="nav-link">HOME</a></li>
+            <li class="nav-item"><a href="#aboutUs" class="nav-link">ABOUT US</a></li>
+            <li class="nav-item"><a href="#services" class="nav-link">SERVICES</a></li>
+            <li class="nav-item"><a href="#review" class="nav-link">REVIEWS</a></li>
+            <li class="nav-item"><a href="#contact-section" class="nav-link">CONTACT US</a></li>
+            <li class="button"><a href="#home" id="form-open" class="nav-link">SIGN-UP</a></li>
+            <button id="darkModeToggle">
+              <i id="modeIcon" class="fas fa-sun"></i> <!-- Default icon (sun for light mode) -->
+            </button>
+          </ul>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Loader -->
+  <div class="loader" id="loader">
+    <div class="spinner"></div>
+  </div>
+  <!-- Login and Signup Form Pop-up -->
+  <section id="home" class="home">
+    <div class="form_container">
+      <!-- Close button -->
+      <i class="uil uil-times form_close"></i>
+
+      <!-- Login Form -->
+      <div class="form login_form active">
+        <form id="loginForm">
+          <h2>Login</h2>
+          <div class="input_box">
+            <input type="text" placeholder="Enter your username" name="username" id="username" required />
+            <i class="uil uil-user email"></i>
+          </div>
+          <div class="input_box">
+            <input type="password" placeholder="Enter your password" name="password" id="password" required />
+            <i class="uil uil-lock password"></i>
+            <i class="uil uil-eye-slash pw_hide"></i>
+          </div>
+          <button class="button" onclick="saveUsername()" type="submit">Login Now</button>
+          <div class="login_signup">
+            Don't have an account? <a href="#" id="signup">Signup</a>
+          </div>
+        </form>
+      </div>
+
+      <!-- Signup Form -->
+      <div class="form signup_form">
+        <form id="signupForm">
+          <h2>Signup</h2>
+          <div class="input_box">
+            <input autocomplete="off" type="text" placeholder="Enter your fullname (e.g. Ali Bin Abu)" name="name"
+              id="name" required />
+            <i class="uil uil-user email"></i>
+          </div>
+          <div class="input_box">
+            <input autocomplete="off" type="text" placeholder="Enter your username (e.g. user098312)" name="username"
+              id="usernameSignUp" required />
+            <i class="uil uil-envelope-alt email"></i>
+          </div>
+          <div class="input_box">
+            <input autocomplete="off" type="text" placeholder="Enter your phone number (e.g. +60123456789)"
+              name="phoneNumber" id="phoneNumber" pattern="(\+?6?01)[0-46-9]-*[0-9]{7,8}" required />
+            <i class="uil uil-phone email"></i>
+          </div>
+          <div class="input_box">
+            <input autocomplete="off" type="text" placeholder="Enter street address (e.g. Jalan Ampang)" name="street"
+              id="street" required />
+            <i class="uil uil-map email"></i>
+          </div>
+          <div class="input_box">
+            <input autocomplete="off" type="text" placeholder="Enter your city (e.g. Shah Alam)" name="city" id="city"
+              required />
+            <i class="uil uil-map email"></i>
+          </div>
+          <div class="input_box">
+            <input autocomplete="off" type="text" placeholder="Enter postal code (e.g. 41000)" name="poscode"
+              id="poscode" pattern="\d{5}$" required />
+            <i class="uil uil-map email"></i>
+          </div>
+          <div class="input_box">
+            <label class="profile_details_text">State:</label>
+            <select name="state" id="state" required>
+              <option value="Johor">Johor</option>
+              <option value="Kedah">Kedah</option>
+              <option value="Kelantan">Kelantan</option>
+              <option value="Melaka">Melaka</option>
+              <option value="Negeri Sembilan">Negeri Sembilan</option>
+              <option value="Pahang">Pahang</option>
+              <option value="Perak">Perak</option>
+              <option value="Perlis">Perlis</option>
+              <option value="Pulau Pinang">Pulau Pinang</option>
+              <option value="Sabah">Sabah</option>
+              <option value="Sarawak">Sarawak</option>
+              <option value="Selangor">Selangor</option>
+              <option value="Terengganu">Terengganu</option>
+              <option value="Wilayah Persekutuan">Wilayah Persekutuan</option>
+            </select>
+          </div>
+          <div class="input_box">
+            <input type="password" placeholder="Create password" name="passwordSignUp" id="passwordSignUp" required />
+            <i class="uil uil-lock password"></i>
+            <i class="uil uil-eye-slash pw_hide"></i>
+          </div>
+          <div class="password-requirements">
+            <ul class="list-unstyled requirement">
+              <li id="requirement-length" class="unmet">✔ At least 8 characters</li>
+              <li id="requirement-uppercase" class="unmet">✔ One uppercase letter</li>
+              <li id="requirement-lowercase" class="unmet">✔ One lowercase letter</li>
+              <li id="requirement-number" class="unmet">✔ One number</li>
+              <li id="requirement-special" class="unmet">✔ One special character</li>
+            </ul>
+          </div>
+          <div class="input_box">
+            <input type="password" id="password2" name="password2" placeholder="Confirm password" onkeyup="cmpass()"
+              required />
+            <i class="uil uil-lock password"></i>
+            <i class="uil uil-eye-slash pw_hide"></i>
+            <span id="wrong_pass_alert"></span>
+          </div>
+          <button id="signupButton" class="button" type="submit">Signup</button>
+          <div class="login_signup">
+            Already have an account? <a href="#" id="login">Login</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+
+  <!------------------------------------------------------ BANNER SECTION ------------------------------------------------------------------------------->
+  <section id="banner">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h2 class="promote">BEST MEDICAL APPOINTMENT</h2>
+          <p style="color: #4682B4; font-weight: bold; font-size:19px">Subscribe to get the best medical appointment
+            booking services easily. We ensure a seamless experience for all your healthcare needs.</p>
+          <a href="https://youtu.be/aKvnHd0a1ZE?si=0TzY5cPH4UoZlGMj">
+            <h5 style="font-weight: bolder;"><img src="video/playbutton-unscreen.gif" alt="Play Button"
+                class="play-button">Watch Tutorial</h5>
+          </a>
+        </div>
+        <div class="col-md-6 text-center">
+          <img src="img/health5.png" class="img-fluid">
+        </div>
+      </div>
+    </div>
+    <!-- SVG Wave -->
+    <div id="wave-container">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path class="wave" fill="#ffffff"
+          d="M0,224L30,213.3C60,203,120,181,180,165.3C240,149,300,139,360,154.7C420,171,480,213,540,208C600,203,660,149,720,144C780,139,840,181,900,213.3C960,245,1020,267,1080,266.7C1140,267,1200,245,1260,240C1320,235,1380,245,1410,250L1440,256L1440,320L0,320Z">
+        </path>
+      </svg>
+    </div>
+  </section>
+
+
+  <!---------------------------------------------------------- ABOUT US SECTION ---------------------------------------------------------------------------->
+  <section id="aboutUs">
+    <div class="container text-center">
+      <h1 class="title">About Us</h1>
+      <div class="row">
+        <div class="col-12 col-md-6">
+          <img src="img/doctor.png" class="img-fluid gif-fluid" style="width: 80%; height: auto; border-radius: 50%;">
+        </div>
+        <div class="col-12 col-md-6 aboutUs"><br><br>
+          <p style="text-align: justify;">
+            MediBook is here to simplify your healthcare experience. Our platform offers a seamless way to find and book
+            appointments with trusted healthcare providers, with real-time availability and easy navigation on any
+            device. We're committed to making healthcare scheduling simple, efficient, and accessible for everyone.
+          </p>
+
+          <!-- Buttons for Mission, Vision, and Objectives -->
+          <div class="buttons-container">
+            <button class="about-button" onmouseover="showInfo('mission')">Mission</button>
+            <button class="about-button" onmouseover="showInfo('vision')">Vision</button>
+            <button class="about-button" onmouseover="showInfo('objectives')">Objectives</button>
+          </div>
+
+          <!-- Styled Content Boxes -->
+          <div id="mission" class="info-box">
+            <h3>Mission</h3>
+            <p>Our mission is to provide accessible healthcare solutions tailored to individual needs with a focus on
+              quality and innovation.</p>
+          </div>
+          <div id="vision" class="info-box" style="display:none;">
+            <h3>Vision</h3>
+            <p>Our vision is to be a leader in transforming healthcare services through technology and a patient-centric
+              approach.</p>
+          </div>
+          <div id="objectives" class="info-box" style="display:none;">
+            <h3>Objectives</h3>
+            <p>Our objectives include enhancing user experience, expanding access to healthcare specialists, and
+              promoting well-being through our platform.</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function showInfo(section) {
+      document.querySelectorAll('.info-box').forEach(el => el.style.display = 'none');
+      document.getElementById(section).style.display = 'block';
+    }
+  </script>
+
+
+
+
+
+  <!--------------------------------------------------------- SERVICES SECTION ------------------------------------------>
+  <section id="services">
+    <div class="container text-center">
+      <h1 class="title"> Our Services</h1>
+      <div class="row text-center">
+        <div class="col-md-4 services">
+          <img src="img/searchspecialist.png" class="service-img">
+          <h4> Search Specialist </h4>
+          <p>Quickly find healthcare specialists based on category or location, ensuring you get the best medical care
+            tailored to your needs.</p>
+        </div>
+
+        <div class="col-md-4 services">
+          <img src="img/detail.png" class="service-img">
+          <h4> Detailed Information </h4>
+          <p>Access detailed profiles of specialists, including qualifications, reviews, and experience, helping you
+            make a correct decision.</p>
+        </div>
+
+        <div class="col-md-4 services">
+          <img src="img/appointment.png" class="service-img">
+          <h4> Book Appointment </h4>
+          <p>Easily book appointments with specialists at your preferred date and time for a smooth healthcare
+            experience.</p>
+        </div>
+
+        <div class="col-md-4 services">
+          <img src="img/tracking.png" class="service-img">
+          <h4> Track Appointment </h4>
+          <p>Stay updated with real-time tracking of your appointments, ensuring you never miss a scheduled visit.</p>
+        </div>
+
+        <div class="col-md-4 services">
+          <img src="img/availability.png" class="service-img">
+          <h4> View Availability Calendar </h4>
+          <p>Check specialists’ availability and choose convenient time slots that fit your schedule.</p>
+        </div>
+
+        <div class="col-md-4 services">
+          <img src="img/FAQ.png" class="service-img">
+          <h4> FAQs and Support </h4>
+          <p>Find quick answers to common questions and access reliable support to ensure a smooth user experience.</p>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+
+
+
+
+  <!------------------------------------------------------------- COUNT SECTION ---------------------------------------------------------------------->
+  <section class="stats-section text-center">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-3">
+          <div class="stat" id="stat1" data-target="200000">0</div>
+          <div class="stat-description">Total Users</div>
+        </div>
+        <div class="col-md-3">
+          <div class="stat" id="stat2" data-target="12000">0</div>
+          <div class="stat-description">Appointments Booked</div>
+        </div>
+        <div class="col-md-3">
+          <div class="stat" id="stat3" data-target="500">0</div>
+          <div class="stat-description">Registered Doctors</div>
+        </div>
+        <div class="col-md-3">
+          <div class="stat" id="stat4" data-target="100">0</div>
+          <div class="stat-description">Locations Served</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!------------------------------------------------------- REVIEW SECTION  ------------------------------------------------------------------->
+  <section id="review">
+    <div class="container text-center">
+      <h1 class="title"> Review</h1><br>
+      <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="img/user2.jpg" alt="Customer 1">
+            <p>"I never thought booking a doctor’s appointment could be this simple. With MediBook, I can quickly find
+              specialists in my area and book based on their open slots—no waiting, no back-and-forth. It’s the future
+              of healthcare!"</p>
+            <h4>- Chris Patel, MediBook User</h4>
+          </div>
+          <div class="carousel-item">
+            <img src="img/doc3.jpeg" alt="Customer 3">
+            <p>"As a healthcare provider, I’ve been using MediBook to manage my appointments, and it’s been a
+              game-changer. Patients can find me with ease, see when I’m available, and schedule appointments without a
+              hitch. It’s a must-have for any modern clinic!"</p>
+            <h4>- Dr. Anna Richards, Dermatologist</h4>
+          </div>
+          <div class="carousel-item">
+            <img src="img/doc4.jpeg" alt="Customer 3">
+            <p>"As a doctor, I highly recommend MediBook to my patients. It allows them to quickly find a specialist in
+              their area and book appointments based on my available time slots. It makes the entire healthcare
+              experience smoother for everyone!"</p>
+            <h4>- Dr. Alice, Orthopedic Surgeon</h4>
+          </div>
+          <div class="carousel-item">
+            <img src="img/user1.jpeg" alt="Customer 2">
+            <p>"As a busy professional, MediBook has made booking appointments with top doctors so much easier. I can
+              see their availability in real-time and book whenever it's most convenient for me. It's truly a
+              time-saver!"</p>
+            <h4>- Dr. Michael Brown, Orthopedic Surgeon</h4>
+          </div>
+          <div class="carousel-item">
+            <img src="img/user3.jpeg" alt="Customer 3">
+            <p>"I love how MediBook keeps everything organized from finding a specialist to receiving reminders. It’s
+              truly a one-stop solution for healthcare."</p>
+            <h4>- Daniel Wilson, MediBook User</h4>
+          </div>
+          <div class="carousel-item">
+            <img src="img/doc2.jpeg" alt="Customer 3">
+            <p>"MediBook has made it easier for patients to find me and book appointments. It bridges the gap between
+              doctors and patients in the most efficient way."</p>
+            <h4>- Dr. David Lee, General Practitioner</h4>
+          </div>
+        </div>
+        <!-- Carousel controls -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!----------------------------------------------------------------- CONTACT US SECTION --------------------------------------------------------------->
+  <section id="contact-section" class="py-5">
+    <div class="container">
+      <div class="row g-4">
+        <!-- Map Section -->
+        <div class="col-12 col-lg-6">
+          <div class="map">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10897.208485193334!2d101.4953157472135!3d3.071261460483619!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc53fb4511025b%3A0x44273c3397fb8af0!2sHE%26SHE%20COFFEE%20(KPPIM%2CUITM%20SHAH%20ALAM)!5e0!3m2!1sen!2smy!4v1700204698103!5m2!1sen!2smy"
+              width="100%" height="100%" style="border:0; min-height: 400px;" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+
+        <!-- Contact Form Section -->
+        <div class="col-12 col-lg-6">
+          <form class="p-4 rounded shadow-sm">
+            <h1>Let's Get Contact</h1>
+            <div class="row g-3">
+              <div class="col-12 col-md-6">
+                <input type="text" class="form-control" id="firstname" placeholder="First Name" required>
+              </div>
+              <div class="col-12 col-md-6">
+                <input type="text" class="form-control" id="lastname" placeholder="Last Name" required>
+              </div>
+              <div class="col-12 col-md-6">
+                <input type="email" class="form-control" id="email" placeholder="Email" required>
+              </div>
+              <div class="col-12 col-md-6">
+                <input type="text" class="form-control" id="mobile" placeholder="Mobile" required>
+              </div>
+              <div class="col-12">
+                <textarea class="form-control" placeholder="Type your message here..." style="height: 150px;"
+                  required></textarea>
+              </div>
+              <div class="col-12">
+                <button type="submit" class="btn btn-primary w-100">Send</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <!--------------------------------------------------------------------- FOOTER ----------------------------------------------------------------------->
+  <div>
+    <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+      viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+      <defs>
+        <linearGradient id="wave-gradient" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="20%" style="stop-color:#89c4f4; stop-opacity:9" />
+          <stop offset="50%" style="stop-color:#a0d8ef; stop-opacity:0.4" />
+        </linearGradient>
+        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+      </defs>
+      <g class="parallax">
+        <use xlink:href="#gentle-wave" x="48" y="0" fill="url(#wave-gradient)" />
+        <use xlink:href="#gentle-wave" x="48" y="3" fill="url(#wave-gradient)" />
+        <use xlink:href="#gentle-wave" x="48" y="5" fill="url(#wave-gradient)" />
+        <use xlink:href="#gentle-wave" x="48" y="7" fill="url(#wave-gradient)" />
+      </g>
+    </svg>
+  </div>
+
+
+  <footer class="text-black text-center text-lg-start"
+    style="background-image: linear-gradient(to right, #89c4f4, #a0d8ef);">
+    <!-- Grid container -->
+    <div class="container p-4">
+      <!--Grid row-->
+      <div class="row mt-4">
+        <!--Grid column-->
+        <div class="col-lg-4 col-md-12 mb-4 mb-md-0" style="padding-right: 50px;">
+          <h5 class="text-uppercase mb-4" style="color:#215178; font-weight: bolder;">About company</h5>
+
+          <p style="text-align: justify;">
+            MediBook is a company focused on transforming the way healthcare appointments are scheduled. We provide a
+            simple, efficient platform that connects patients with healthcare providers, offering real-time availability
+            and seamless appointment booking.
+          </p>
+
+          <p style="text-align: justify;">
+            We are dedicated to making healthcare more accessible, efficient, and user-friendly, empowering individuals
+            to manage their health with ease.
+          </p>
+
+          <div class="mt-4">
+            <!-- Facebook -->
+            <a type="button" class="btn btn-floating btn-warning btn-lg"><i class="fab fa-facebook-f"></i></a>
+            <!-- Dribbble -->
+            <a type="button" class="btn btn-floating btn-warning btn-lg"><i class="fab fa-dribbble"></i></a>
+            <!-- Twitter -->
+            <a type="button" class="btn btn-floating btn-warning btn-lg"><i class="fab fa-twitter"></i></a>
+            <!-- Google + -->
+            <a type="button" class="btn btn-floating btn-warning btn-lg"><i class="fab fa-google-plus-g"></i></a>
+            <!-- Linkedin -->
+          </div>
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-lg-4 col-md-6 mb-4 mb-md-0" style="padding-left: 50px;">
+          <h5 class="text-uppercase mb-4 pb-1" style="color:#215178; font-weight: bolder;">Our Contact</h5>
+
+          <ul class="fa-ul" style="margin-left: 1.65em;">
+            <li class="mb-3">
+              <span class="fa-li"><i class="fas fa-home"></i></span><span class="ms-2">New York, NY 10012, US</span>
+            </li>
+            <li class="mb-3">
+              <span class="fa-li"><i class="fas fa-envelope"></i></span><span class="ms-2">info@example.com</span>
+            </li>
+            <li class="mb-3">
+              <span class="fa-li"><i class="fas fa-phone"></i></span><span class="ms-2">+ 01 234 567 88</span>
+            </li>
+            <li class="mb-3">
+              <span class="fa-li"><i class="fas fa-print"></i></span><span class="ms-2">+ 01 234 567 89</span>
+            </li>
+          </ul>
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase mb-4" style="color:#215178; font-weight: bolder;">Our Team</h5>
+
+          <table class="table text-center text-white">
+            <tbody class="font-weight-normal">
+              <tr>
+                <td>Founder:</td>
+                <td>Uncle K</td>
+              </tr>
+              <tr>
+                <td>Co-Founder:</td>
+                <td>Nurul Aina Firzanah </td>
+              </tr>
+              <tr>
+                <td>Manager</td>
+                <td>Nurin Mardiana</td>
+              </tr>
+              <tr>
+                <td>Developer</td>
+                <td>Amin Zahin </td>
+              </tr>
+              <tr>
+                <td>Designer</td>
+                <td>Izat Aiman</td>
+              </tr>
+              <tr>
+                <td>Tester</td>
+                <td>Musya Hafizi</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!--Grid column-->
+      </div>
+      <!--Grid row-->
+    </div>
+    <!-- Grid container -->
+
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: #4682b4; font-weight: bold;">
+      © 2024 Copyright:
+      <a class="text-white" href="#banner">MediBook.com</a>
+    </div>
+  </footer>
+
+  </div>
+  <!--------------------------------------------------------------------------- END OF CONTAINER ----------------------------------------------------------->
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script> // for review 
+    // Select the carousel
+    const carousel = document.querySelector('#carouselExample');
+
+    // Get the carousel instance
+    const carouselInstance = bootstrap.Carousel.getOrCreateInstance(carousel);
+
+    // Pause the carousel when the mouse enters
+    carousel.addEventListener('mouseenter', () => {
+      carouselInstance.pause();
+    });
+
+    // Resume the carousel when the mouse leaves
+    carousel.addEventListener('mouseleave', () => {
+      carouselInstance.cycle();
+    });
+  </script>
+  <script>
+    // Function to highlight the navbar items when their corresponding section is in view
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll(".navbar-nav li a");
+
+    window.addEventListener("scroll", () => {
+      let currentSection = "";
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+        if (window.scrollY >= sectionTop - sectionHeight / 3) {
+          currentSection = section.getAttribute("id");
+        }
+      });
+
+      navLinks.forEach((link) => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === `#${currentSection}`) {
+          link.classList.add("active");
+        }
+      });
+    });
+  </script>
+
+
+  <!----------------------------------------- JavaScript for Counting Animation ---------------------------------------------------------->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const counters = document.querySelectorAll(".stat");
+
+      // Function to animate the counter
+      const animateCounter = (counter) => {
+        const target = +counter.getAttribute("data-target");
+        const speed = target / 200; // Adjust speed (smaller value = faster count)
+        let current = 0;
+
+        const countInterval = setInterval(() => {
+          current += speed;
+          if (current >= target) {
+            current = target;
+            clearInterval(countInterval); // Stop counting when target is reached
+          }
+          counter.innerText = Math.floor(current);
+        }, 20);
+      };
+
+      // Create the Intersection Observer
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const counter = entry.target;
+              animateCounter(counter); // Restart counting every time it comes into view
+            }
+          });
+        },
+        { threshold: 0.5 } // Trigger when 50% of the element is visible
+      );
+
+      // Observe each counter
+      counters.forEach((counter) => observer.observe(counter));
+    });
+  </script>
+
+   <!----------------------------------------- JavaScript for signup & login form ---------------------------------------------------------->
+  <script>
+    const pwShowHide = document.querySelectorAll(".pw_hide");
+    const formContainer = document.querySelector(".form_container");
+    const formCloseBtn = document.querySelector(".form_close");
+    const home = document.querySelector(".home");
+    const signupBtn = document.querySelector("#signup"),
+      loginBtn = document.querySelector("#login");
+    const loader = document.getElementById("loader");
+
+    const showLoader = () => {
+      loader.style.display = "flex";
+    };
+    // Function to hide the loader
+    const hideLoader = () => {
+      loader.style.display = "none";
+    };
+
+
+    // Open the form
+    document.querySelector("#form-open").addEventListener("click", () => {
+      home.classList.add("show");
+      formContainer.classList.add("active"); // Show the modal with transition
+    });
+
+    // Show the sign-up form and hide the login form
+    signupBtn.addEventListener("click", () => {
+      document.querySelector(".login_form").classList.remove("active");
+      document.querySelector(".signup_form").classList.add("active");
+    });
+
+    // Show the login form and hide the sign-up form
+    loginBtn.addEventListener("click", () => {
+      document.querySelector(".signup_form").classList.remove("active");
+      document.querySelector(".login_form").classList.add("active");
+    });
+
+    // Close the form when clicking on the X button
+    formCloseBtn.addEventListener("click", () => home.classList.remove("show"));
+
+    // Close the form if clicked outside the form container
+    window.addEventListener("click", (e) => {
+      // Check if the click was outside the modal and not the form open button
+      if (!formContainer.contains(e.target) && !e.target.matches('#form-open') && home.classList.contains('show')) {
+        home.classList.remove("show");
+        formContainer.classList.remove("active");
+      }
+    });
+
+    pwShowHide.forEach((icon) => {
+      icon.addEventListener("click", () => {
+        let getPwInput = icon.parentElement.querySelector("input");
+        if (getPwInput.type === "password") {
+          getPwInput.type = "text";
+          icon.classList.replace("uil-eye-slash", "uil-eye");
+        } else {
+          getPwInput.type = "password";
+          icon.classList.replace("uil-eye", "uil-eye-slash");
+        }
+      });
+    });
+
+    function cmpass() {
+      var password = document.getElementById("passwordSignUp").value;
+      var confirmPassword = document.getElementById("password2").value;
+      if (password != confirmPassword) {
+        document.getElementById("wrong_pass_alert").style.color = "red";
+        document.getElementById("wrong_pass_alert").innerHTML =
+          "☒ Use same password";
+        document.getElementById("button").disabled = true;
+        document.getElementById("button").style.opacity = 0.4;
+      } else {
+        document.getElementById("wrong_pass_alert").style.color = "green";
+        document.getElementById("wrong_pass_alert").innerHTML =
+          "🗹 Password Matched";
+        document.getElementById("button").disabled = false;
+        document.getElementById("button").style.opacity = 1;
+      }
+    }
+
+    // Get the form element
+    const loginForm = document.getElementById("loginForm");
+
+    // Add event listener for form submission
+    loginForm.addEventListener("submit", function (e) {
+      e.preventDefault(); // Prevent default form submission behavior
+
+      // Get the input values
+      const username = document.getElementById("username").value.trim();
+      const password = document.getElementById("password").value.trim();
+
+      // Validate input fields
+      if (username === "" || password === "") {
+        alert("Please fill in all fields.");
+      } else {
+        // Save username to localStorage
+        localStorage.setItem("username", username);
+
+        // Show the loader (if defined)
+        if (typeof showLoader === "function") {
+          showLoader();
+        }
+
+        // Simulate a delay and navigate to the next page
+        setTimeout(() => {
+          if (typeof hideLoader === "function") {
+            hideLoader();
+          }
+          window.location.href = "userHome.html"; // Navigate to the next page
+        }, 2000); // 2 seconds delay
+      }
+    });
+
+    const signupForm = document.getElementById("signupForm");
+    const signupFormContainer = document.querySelector(".signup_form");
+
+    // Handle signup form submission
+    signupForm.addEventListener("submit", function (e) {
+      e.preventDefault(); // Prevent default form submission
+
+      // Perform form validation logic here (optional)
+      const inputs = Array.from(signupForm.querySelectorAll("input"));
+      const allFieldsFilled = inputs.every(input => input.value.trim() !== "");
+
+      if (allFieldsFilled) {
+        // If all fields are valid, show the login form
+        const username = document.getElementById("usernameSignUp").value.trim(); // Assuming this is the ID of the username field in the sign-up form
+        localStorage.setItem("username", username); // Store the username in localStorage
+
+        document.querySelector(".signup_form").classList.remove("active");
+        document.querySelector(".login_form").classList.add("active");
+        const loginUsernameField = document.getElementById("username"); // Assuming this is the ID of the username field in the login form
+        loginUsernameField.value = localStorage.getItem("username");
+      } else {
+        alert("Please fill in all the required fields!");
+      }
+    });
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const passwordInput = document.getElementById("passwordSignUp");
+
+      // Elements for each requirement
+      const requirementLength = document.getElementById("requirement-length");
+      const requirementUppercase = document.getElementById("requirement-uppercase");
+      const requirementLowercase = document.getElementById("requirement-lowercase");
+      const requirementNumber = document.getElementById("requirement-number");
+      const requirementSpecial = document.getElementById("requirement-special");
+
+      // Check password requirements
+      const checkPasswordRequirements = (password) => {
+        // Regular expressions for password requirements
+        const requirements = {
+          length: /.{8,}/, // At least 8 characters
+          uppercase: /[A-Z]/, // At least one uppercase letter
+          lowercase: /[a-z]/, // At least one lowercase letter
+          number: /[0-9]/, // At least one number
+          special: /[!@#$%^&*(),.?":{}|<>]/, // At least one special character
+        };
+
+        // Update each requirement
+        requirementLength.className = requirements.length.test(password) ? "met" : "unmet";
+        requirementUppercase.className = requirements.uppercase.test(password) ? "met" : "unmet";
+        requirementLowercase.className = requirements.lowercase.test(password) ? "met" : "unmet";
+        requirementNumber.className = requirements.number.test(password) ? "met" : "unmet";
+        requirementSpecial.className = requirements.special.test(password) ? "met" : "unmet";
+      };
+
+      // Add event listener to password input
+      passwordInput.addEventListener("input", () => {
+        const password = passwordInput.value;
+        checkPasswordRequirements(password);
+      });
+    });
+
+  </script>
+
+  <!-----------------------------------------------------dark mode JavaScript-------------------------------------------->
+  <script>
+    // Select the dark mode toggle button and icon
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const modeIcon = document.getElementById('modeIcon');
+
+    // Add event listener for the dark mode toggle button
+    darkModeToggle.addEventListener('click', () => {
+      // Toggle dark mode on the body and toggle button styles
+      document.body.classList.toggle('dark-mode');
+      darkModeToggle.classList.toggle('dark-mode');
+
+      // Toggle the icon between sun (light mode) and moon (dark mode)
+      if (document.body.classList.contains('dark-mode')) {
+        modeIcon.classList.remove('fa-sun');
+        modeIcon.classList.add('fa-moon');
+        // Save the user's preference in localStorage (optional)
+        localStorage.setItem('darkMode', 'enabled');
+      } else {
+        modeIcon.classList.remove('fa-moon');
+        modeIcon.classList.add('fa-sun');
+        localStorage.removeItem('darkMode');
+      }
+    });
+
+    // Check the saved preference when the page loads
+    if (localStorage.getItem('darkMode') === 'enabled') {
+      document.body.classList.add('dark-mode');
+      darkModeToggle.classList.add('dark-mode');
+      modeIcon.classList.remove('fa-sun');
+      modeIcon.classList.add('fa-moon');
+    }
+
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>

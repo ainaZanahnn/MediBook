@@ -1,0 +1,343 @@
+/**
+ * General Reset
+ *
+ * @format
+ */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  font-family: sans-serif;
+}
+
+/* Navbar Styling */
+#nav-bar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  margin-bottom: 5%;
+}
+
+.navbar {
+  background-image: linear-gradient(to right, #a0d8ef, #89c4f4);
+  /* Slightly lighter background */
+  padding: 0 !important;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.logo-text {
+  margin-left: 10px; /* Space between logo and text */
+  margin-top: 2px; /* Moves the text downward */
+  font-size: 1.25rem; /* Adjust font size if needed */
+  color: #000; /* Adjust text color if needed */
+}
+
+/* Navigation Links Styling */
+.navbar-nav li {
+  padding: 0 10px;
+}
+
+/* Default state of navbar item */
+.navbar-nav li a {
+  color: #f1f1f1;
+  /* Light text color for inactive state */
+  font-weight: 600;
+  font-style: normal;
+  transition: color 0.3s, background-color 0.3s;
+}
+
+/* Hover state */
+.navbar-nav li a:hover {
+  background-color: #4682b4;
+  /* Darker blue for hover background */
+  color: #f0f8ff;
+  /* Light text for hover */
+}
+
+/* Active state (when viewing section) */
+.navbar-nav li a.active {
+  background-color: #4682b4;
+  /* Darker blue background for active state */
+  color: #affbff !important;
+  /* Baby blue font color for active state */
+}
+
+.navbar-nav .nav-item .nav-link {
+  color: white;
+  /* Default text color */
+  padding: 10px 15px;
+  /* Add padding for clickable area */
+  border-radius: 5px;
+  /* Rounded corners */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar-nav .nav-item .nav-link:hover,
+.navbar-nav .nav-item .nav-link.active {
+  background-color: #4682b4;
+  /* Highlight color */
+  color: white;
+  /* Text color on hover/active */
+}
+
+/* Navbar Toggler Icon */
+.fa-bars {
+  color: #fff;
+  font-size: 30px !important;
+}
+
+.navbar-toggler:focus {
+  outline: none;
+  /* Remove the default outline */
+  border: 5px solid #4682b4;
+  /* Add a custom border color when the button is focused */
+}
+
+/*----------------------------banner section ----------------------------*/
+#banner {
+  background-image: linear-gradient(to right, #a0d8ef, #89c4f4);
+  color: #fff;
+  padding-top: 10%;
+}
+
+.promote {
+  font-size: 40px;
+  font-weight: 600;
+  margin-top: 100px;
+}
+
+.play-button {
+  width: 45px;
+  margin: 20px;
+}
+
+#banner a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.bottom-img {
+  width: 100%;
+}
+
+/* Dark mode styles */
+
+button {
+  padding: 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button i {
+  margin-right: 0;
+}
+
+body.dark-mode {
+  background-color: #333;
+  color: white;
+}
+
+button.dark-mode {
+  background-color: #555;
+}
+
+button.dark-mode i {
+  color: yellow;
+  /* You can change this to any color you like */
+}
+
+button #modeicon {
+  padding-left: 20%;
+}
+
+/* Default wave color (light mode) */
+.wave {
+  fill: #ffffff;
+  /* White for light mode */
+}
+
+/* Dark mode wave color */
+body.dark-mode .wave {
+  fill: #333;
+  /* Darker color for dark mode */
+}
+
+/* Dark mode styles for About Us */
+body.dark-mode #search {
+  background: #333;
+  /* Dark background color for About Us in dark mode */
+  color: #fff;
+  /* Light text color */
+}
+
+/* Styling for dropdown items in dark mode */
+body.dark-mode .dropdown-item {
+  color: #1e90ff;
+  /* DodgerBlue for links in dark mode */
+}
+
+/*-----------------------------card------------------------------*/
+.card-container {
+  border: 1px solid #ccc;
+  /* Add a border */
+  padding: 15px;
+  /* Add some padding */
+  border-radius: 8px;
+  /* Rounded corners (optional) */
+  max-height: 600px;
+  /* Adjust height to fit 6 cards */
+  overflow-y: auto;
+  /* Add vertical scroll */
+  overflow-x: hidden;
+  /* Prevent horizontal scrolling */
+  background-color: #f9f9f9;
+  /* Background color for the container */
+}
+
+/* Add space around the container if needed */
+.card-container .row {
+  margin: 0;
+}
+
+.pagination-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.pagination-controls button {
+  margin: 0 10px;
+  padding: 5px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.pagination-controls button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.navbar .fas.fa-user-circle {
+  font-size: 28px;
+  color: #fff;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.navbar .fas.fa-user-circle:hover {
+  color: #f0f0f0;
+}
+
+.dropdown-menu {
+  min-width: 150px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-menu .dropdown-item {
+  color: #0c0c0c;
+  /* Text color for the dropdown items */
+  transition: color 0.3s, background-color 0.3s;
+}
+
+.dropdown-menu .dropdown-item:hover {
+  color: #ffffff;
+  /* Text color on hover */
+  background-color: #007bff;
+  /* Background color on hover */
+}
+
+/*--------------------------Footer----------------------------------*/
+
+.waves {
+  position: relative;
+  width: 100%;
+  height: 15vh;
+  margin-bottom: -7px;
+  /*Fix for safari gap*/
+  min-height: 200px;
+  max-height: 400px;
+}
+
+/* Animation */
+.parallax > use {
+  animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+}
+
+.parallax > use:nth-child(1) {
+  animation-delay: -2s;
+  animation-duration: 7s;
+}
+
+.parallax > use:nth-child(2) {
+  animation-delay: -3s;
+  animation-duration: 10s;
+}
+
+.parallax > use:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: 13s;
+}
+
+.parallax > use:nth-child(4) {
+  animation-delay: -5s;
+  animation-duration: 20s;
+}
+
+@keyframes move-forever {
+  0% {
+    transform: translate3d(-90px, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(85px, 0, 0);
+  }
+}
+
+/*Shrinking for mobile*/
+@media (max-width: 768px) {
+  .waves {
+    height: 40px;
+    min-height: 40px;
+  }
+
+  .content {
+    height: 30vh;
+  }
+}
+
+/*Other*/
+
+.unique-color-dark {
+  background-color: #4682b4 !important;
+}
+
+.bg-light {
+  background-color: #89c4f4 !important;
+}
+
+.navbar-brand {
+  color: white;
+}
+
+.custom-color {
+  background-color: #a0d8ef !important;
+}

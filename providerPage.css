@@ -1,0 +1,313 @@
+/**
+ * General Reset
+ *
+ * @format
+ */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.box {
+  margin-bottom: 20px; /* Adjust space as needed */
+}
+
+/* Body Styling */
+body {
+  font-family: sans-serif;
+}
+
+/* Navbar Styling */
+#nav-bar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.logo-text {
+  margin-left: 10px; /* Space between logo and text */
+  margin-top: 2px; /* Moves the text downward */
+  font-size: 1.25rem; /* Adjust font size if needed */
+  color: #000; /* Adjust text color if needed */
+}
+
+.navbar {
+  background-image: linear-gradient(
+    to right,
+    #a0d8ef,
+    #89c4f4
+  ); /* Slightly lighter background */
+  padding: 0 !important;
+}
+
+/* Navigation Links Styling */
+.navbar-nav li {
+  padding: 0 10px;
+}
+
+/* Default state of navbar item */
+.navbar-nav li a {
+  color: #f1f1f1 !important; /* Light text color for inactive state */
+  font-weight: 600;
+  font-style: normal;
+  transition: color 0.3s, background-color 0.3s;
+}
+
+/* Hover state */
+.navbar-nav li a:hover {
+  background-color: #4682b4; /* Darker blue for hover background */
+  color: #f0f8ff; /* Light text for hover */
+}
+
+/* Active state (when viewing section) */
+.navbar-nav li a.active {
+  background-color: #4682b4; /* Darker blue background for active state */
+  color: #affbff !important; /* Baby blue font color for active state */
+  border-radius: 5px; /* Rounded corners */
+}
+
+/* Navbar Toggler Icon */
+.fa-bars {
+  color: #fff;
+  font-size: 30px !important;
+}
+
+.navbar-toggler:focus {
+  outline: none; /* Remove the default outline */
+  border: 5px solid #4682b4; /* Add a custom border color when the button is focused */
+}
+
+/* Dark mode styles */
+
+button {
+  padding: 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+button i {
+  margin-right: 8px;
+}
+
+body.dark-mode {
+  background-color: #333;
+  color: white;
+}
+
+button.dark-mode i {
+  color: yellow; /* You can change this to any color you like */
+}
+
+/* Default wave color (light mode) */
+.wave {
+  fill: #ffffff; /* White for light mode */
+}
+
+/* Dark mode wave color */
+body.dark-mode .wave {
+  fill: #333; /* Darker color for dark mode */
+}
+
+/* Dark mode styles for About Us */
+body.dark-mode #aboutUs {
+  background: #333; /* Dark background color for About Us in dark mode */
+  color: #fff; /* Light text color */
+}
+
+body.dark-mode .info-box h3 {
+  color: #1e90ff; /* Bright blue color for headers in info boxes */
+}
+
+body.dark-mode #aboutUs .about-button {
+  background-color: #555; /* Darker button background */
+  color: #fff; /* Light text color for buttons */
+}
+
+body.dark-mode #aboutUs .about-button:hover {
+  background-color: #666; /* Slightly lighter on hover */
+  color: #add8e6; /* Light blue text color when hovered in dark mode */
+}
+
+/*----------------------------footer wave section ----------------------------*/
+
+/*Waves*/
+
+.waves {
+  position: relative;
+  width: 100%;
+  height: 15vh;
+  margin-bottom: -7px;
+  /*Fix for safari gap*/
+  min-height: 200px;
+  max-height: 400px;
+}
+
+/* Animation */
+.parallax > use {
+  animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+}
+.parallax > use:nth-child(1) {
+  animation-delay: -2s;
+  animation-duration: 7s;
+}
+.parallax > use:nth-child(2) {
+  animation-delay: -3s;
+  animation-duration: 10s;
+}
+.parallax > use:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: 13s;
+}
+.parallax > use:nth-child(4) {
+  animation-delay: -5s;
+  animation-duration: 20s;
+}
+@keyframes move-forever {
+  0% {
+    transform: translate3d(-90px, 0, 0);
+  }
+  100% {
+    transform: translate3d(85px, 0, 0);
+  }
+}
+/*Shrinking for mobile*/
+@media (max-width: 768px) {
+  .waves {
+    height: 40px;
+    min-height: 40px;
+  }
+  .content {
+    height: 30vh;
+  }
+}
+
+/*------------------------------------------Other-----------------------------*/
+
+.unique-color-dark {
+  background-color: #d0d5d8 !important;
+}
+
+.bg-light {
+  background-color: #89c4f4 !important;
+}
+
+.navbar-brand {
+  color: white;
+}
+
+.custom-color {
+  background-color: #a0d8ef !important;
+}
+
+.available-date {
+  background-color: #28a745;
+  color: white;
+}
+.unavailable-date {
+  background-color: #dc3545;
+  color: white;
+}
+.selected-date {
+  background-color: #ffc107;
+  color: white;
+  font-weight: bold;
+  border: 2px solid #007bff;
+}
+.date-button {
+  width: 50px;
+  height: 50px;
+  margin: 5px;
+  font-size: 1.2rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.calendar-header {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.calendar-day {
+  font-size: 1rem;
+  font-weight: 500;
+}
+.calendar {
+  border-radius: 10px;
+  border: 1px solid #dee2e6;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.calendar .row {
+  display: flex;
+  justify-content: center;
+}
+.calendar .col {
+  padding: 0;
+}
+.calendar .row:nth-child(1) {
+  background-color: #f8f9fa;
+}
+.calendar .col button {
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-bottom: 10px;
+}
+.calendar .col button:hover {
+  opacity: 0.8;
+}
+.calendar .col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.calendar .row {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-gap: 5px;
+}
+body.dark-mode .calendar .calendar-day strong {
+  color: rgb(8, 8, 8) !important;
+}
+
+.card-body {
+  position: relative;
+  bottom: 0;
+}
+
+.navbar .fas.fa-user-circle {
+  font-size: 28px;
+  color: #fff;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.navbar .fas.fa-user-circle:hover {
+  color: #f0f0f0;
+}
+
+.dropdown-menu {
+  min-width: 150px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-menu .dropdown-item {
+  color: #0c0c0c !important; /* Text color for the dropdown items */
+  transition: color 0.3s, background-color 0.3s;
+}
+
+.dropdown-menu .dropdown-item:hover {
+  color: #ffffff; /* Text color on hover */
+  background-color: #007bff; /* Background color on hover */
+}
