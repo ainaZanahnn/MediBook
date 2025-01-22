@@ -14,11 +14,9 @@
   margin-bottom: 20px; /* Adjust space as needed */
 }
 
-
 /* Body Styling */
 body {
   font-family: sans-serif;
-  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 /* Navbar Styling */
@@ -308,8 +306,6 @@ body.dark-mode .calendar .calendar-day strong {
   color: #0c0c0c !important; /* Text color for the dropdown items */
   transition: color 0.3s, background-color 0.3s;
 }
-
-
 
 .dropdown-menu .dropdown-item:hover {
   color: #ffffff; /* Text color on hover */
